@@ -11,9 +11,8 @@ RUN apt-get install -y curl && \
   apt-get install -y nginx && \
   apt-get clean
 
+RUN  echo "daemon off;" >> /etc/nginx/nginx.conf
+
 COPY etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 
-CMD ["nginx"]
-
 EXPOSE 80
-EXPOSE 443
